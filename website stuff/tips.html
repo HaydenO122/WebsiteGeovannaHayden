@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tips — The Cozy Spoon</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container">
+      <div class="logo-wrap">
+        <!-- PICTURE 1: Logo (circular spoon logo) -->
+        <img src="images/logo.png" alt="The Cozy Spoon logo" class="logo-img" style="border: 4px solid rgba(255,255,255,0.6);">
+      </div>
+
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="tips.html">Tips</a>
+        <a href="about.html">About</a>
+        <a href="feedback.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2 class="hero-title">Level up your kitchen game.</h2>
+    </section>
+
+    <section class="tips-grid">
+      <article class="tip">
+        <div class="tip-box">
+          <div class="tip-offset"></div>
+          <!-- PICTURE 7: Flour measuring image -->
+          <img src="images/measure-flour.jpg" alt="How to measure flour">
+        </div>
+        <h4>How to Measure Flour the Right Way</h4>
+        <p class="tip-text">Baking is precision. Learn the measuring technique that keeps your baked goods light and not dense.</p>
+      </article>
+
+      <article class="tip">
+        <div class="tip-box">
+          <div class="tip-offset"></div>
+          <!-- PICTURE 8: Chicken cooking image -->
+          <img src="images/cook-chicken.jpg" alt="How to cook chicken to perfection">
+        </div>
+        <h4>How to Cook Chicken to Perfection</h4>
+        <p class="tip-text">Pat chicken dry, season, cook to 165°F, and let it rest — a few small steps for juicy results.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year-tips"></span> The Cozy Spoon</div>
+  </footer>
+
+  <script> document.getElementById('year-tips').textContent = new Date().getFullYear(); </script>
+</body>
+</html>
