@@ -12,11 +12,10 @@
   <header class="site-header">
     <div class="header-inner container">
       <div class="logo-wrap">
-        <!-- PICTURE 1: Logo (circular spoon logo) -->
         <img src="images/logo.png" alt="The Cozy Spoon logo" class="logo-img" style="border: 4px solid rgba(255,255,255,0.6);">
       </div>
 
-      <nav class="top-nav" aria-label="Main navigation">
+      <nav class="top-nav">
         <a href="index.html">Home</a>
         <a href="recipes.html">Recipes</a>
         <a href="tips.html">Tips</a>
@@ -28,32 +27,27 @@
 
   <main class="container">
     <section class="hero">
-      <h2 class="hero-title">Flavor starts here.</h2>
-      <p class="lead">Welcome to your new favorite place in the kitchen. Here you'll find simple recipes, helpful tips, and delicious inspiration.</p>
-
-      <div class="featured-cta">
-        Featured Recipes
-      </div>
+      <h2 class="hero-title">Which meal are we preparing today?</h2>
     </section>
 
-    <section class="featured-cards">
-      <article class="feature">
-        <h4>Chicken Stir Fry</h4>
-        <div class="feature-image-wrap">
-          <div class="feature-offset"></div>
-          <!-- PICTURE 5: Chicken stir-fry image -->
-          <img src="images/chicken-stirfry.jpg" alt="Chicken stir fry">
-        </div>
-      </article>
+    <section class="cards">
+      <figure class="card">
+        <div class="card-offset"></div>
+        <img src="images/breakfast.jpg" alt="Breakfast plate">
+        <figcaption>Breakfast</figcaption>
+      </figure>
 
-      <article class="feature">
-        <h4>The Best Fish Tacos</h4>
-        <div class="feature-image-wrap">
-          <div class="feature-offset"></div>
-          <!-- PICTURE 6: Fish tacos image -->
-          <img src="images/fish-tacos.jpg" alt="Fish tacos">
-        </div>
-      </article>
+      <figure class="card card-center">
+        <div class="card-offset"></div>
+        <img src="images/lunch.jpg" alt="Lunch plate">
+        <figcaption>Lunch</figcaption>
+      </figure>
+
+      <figure class="card">
+        <div class="card-offset"></div>
+        <img src="images/dinner.jpg" alt="Dinner plate">
+        <figcaption>Dinner</figcaption>
+      </figure>
     </section>
   </main>
 
@@ -61,7 +55,8 @@
     <div class="container">© <span id="year-recipes"></span> The Cozy Spoon</div>
   </footer>
 
-  <script> document.getElementById('year-recipes').textContent = new Date().getFullYear(); </script>
+  <script>
+    document.getElementById('year-recipes').textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
