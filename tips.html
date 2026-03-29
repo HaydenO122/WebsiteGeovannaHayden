@@ -8,15 +8,18 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header class="site-header">
     <div class="header-inner container">
       <div class="logo-wrap">
-        <!-- PICTURE 1: Logo (circular spoon logo) -->
-        <img src="logo.png" alt="The Cozy Spoon logo" class="logo-img" style="border: 4px solid rgba(255,255,255,0.6);">
+        <img src="logo.png" alt="The Cozy Spoon logo" class="logo-img">
       </div>
 
-      <nav class="top-nav" aria-label="Main navigation">
+      <!-- Mobile menu button -->
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+      <nav class="top-nav" id="nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="recipes.html">Recipes</a>
         <a href="tips.html">Tips</a>
@@ -34,8 +37,6 @@
     <section class="tips-grid">
       <article class="tip">
         <div class="tip-box">
-          <div class="tip-offset"></div>
-          <!-- PICTURE 7: Flour measuring image -->
           <img src="measure-flour.jpg" alt="How to measure flour">
         </div>
         <h4>How to Measure Flour the Right Way</h4>
@@ -44,8 +45,6 @@
 
       <article class="tip">
         <div class="tip-box">
-          <div class="tip-offset"></div>
-          <!-- PICTURE 8: Chicken cooking image -->
           <img src="cook-chicken.jpg" alt="How to cook chicken to perfection">
         </div>
         <h4>How to Cook Chicken to Perfection</h4>
@@ -58,7 +57,12 @@
     <div class="container">© <span id="year-tips"></span> The Cozy Spoon</div>
   </footer>
 
-  <script> document.getElementById('year-tips').textContent = new Date().getFullYear(); </script>
-</body>
+  <script>
+    document.getElementById('year-tips').textContent = new Date().getFullYear();
 
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("show");
+    }
+  </script>
+</body>
 </html>
