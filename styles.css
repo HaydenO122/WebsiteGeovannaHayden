@@ -1,182 +1,124 @@
 :root {
-  --max-width: 1100px;
   --nav-bg: #c9f2f8;
   --nav-outline: #05a6ff;
-  --accent: #1565c0;
   --page-bg: #8f8f8f;
-  --muted: #1d1d1d;
 }
 
-/* Basic Reset */
-* { box-sizing: border-box; }
-html, body { 
-  height: 100%; 
-  overflow-x: hidden; /* Prevents tiny accidental side-scrolling */
+/* 1. THE FIX: Box-sizing & Image Reset */
+* { 
+  box-sizing: border-box; /* Prevents padding from adding to width */
+  margin: 0; 
+  padding: 0; 
 }
+
+img {
+  max-width: 100%; /* Image stays inside its container */
+  height: auto;    /* Keeps the shape correct */
+  display: block;
+}
+
 body {
-  margin: 0;
   background: var(--page-bg);
   font-family: 'Montserrat', sans-serif;
-  color: var(--muted);
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
+  line-height: 1.4;
+  overflow-x: hidden; /* Hard stop for horizontal scrolling */
 }
 
+/* 2. THE FIX: Flexible Container */
 .container {
-  max-width: var(--max-width);
+  width: 95%;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 15px; /* Slightly smaller padding for mobile */
 }
 
-/* Header & Navigation */
-.site-header {
-  padding: 15px 0;
-}
+/* 3. THE FIX: Navigation (No more overlapping) */
+.site-header { padding: 20px 0; }
 
 .header-inner {
   display: flex;
-  flex-direction: column; /* Stack logo and nav on mobile */
+  flex-direction: column; /* Stacked on mobile */
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .logo-wrap {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.logo-img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
+  flex-shrink: 0; /* Prevents logo from squishing */
 }
 
 .top-nav {
-  width: 100%; /* Fill width on mobile */
-  background: var(--nav-bg);
-  border: 3px solid rgba(0,0,0,0.05);
-  box-shadow: inset 0 0 0 2px var(--nav-outline);
   display: flex;
-  flex-wrap: wrap; /* Allow buttons to wrap to next line if needed */
+  flex-wrap: wrap; /* Allows links to jump to next line if screen is tiny */
   justify-content: center;
+  background: var(--nav-bg);
+  outline: 3px solid var(--nav-outline);
+  border-radius: 4px;
+  width: 100%;
   padding: 10px;
-  border-radius: 8px;
 }
 
 .top-nav a {
   text-decoration: none;
   color: #08314b;
   font-weight: 600;
-  padding: 10px 15px; /* Larger touch targets */
-  font-size: 0.9rem;
+  padding: 12px; /* Bigger tap area for thumbs */
 }
 
-/* Hero Section */
+/* 4. THE FIX: Hero Sizing */
 .hero {
-  padding: 40px 0 20px;
   text-align: center;
+  padding: 40px 0;
 }
 
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: clamp(1.8rem, 5vw, 3rem); /* Fluid font: grows with screen */
+  margin-bottom: 15px;
 }
 
-.lead {
-  font-size: 1rem;
-  padding: 0 10px;
-}
-
-/* Featured Recipes Grid */
+/* 5. THE FIX: Grid Layout (Replaces floats/flex-wrap) */
 .featured-cards {
   display: grid;
   grid-template-columns: 1fr; /* Single column on mobile */
-  gap: 40px;
-  margin: 40px 0;
+  gap: 50px;
+  margin-bottom: 100px;
 }
 
-.feature h4 {
-  margin-bottom: 10px;
-  text-align: center;
+/* Card Sizing Fix */
+.feature {
+  width: 100%;
 }
 
 .feature-image-wrap {
   position: relative;
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9; /* Keeps images consistent */
-}
-
-.feature-image-wrap img {
-  width: 100%;
-  height: 100%;
-  object-position: center;
-  object-fit: cover;
-  position: relative;
-  z-index: 2;
-  padding: 8px;
   background: white;
-  border: 1px solid #ddd;
+  padding: 10px;
+  /* Removed fixed height here - let the image define it */
 }
 
-/* The decorative offset - Adjusted for mobile to be less intrusive */
 .feature-offset {
   position: absolute;
   width: 100%;
   height: 100%;
-  left: 10px;
-  top: 10px;
   background: rgba(255,255,255,0.2);
-  z-index: 1;
+  top: 15px;
+  left: 15px;
+  z-index: -1; /* Puts it behind the image */
 }
 
-/* Responsive Breakpoints */
-
-/* Tablets and Desktops */
+/* 6. DESKTOP ADAPTATION */
 @media (min-width: 768px) {
   .header-inner {
-    flex-direction: row; /* Side-by-side logo and nav */
-    text-align: left;
-  }
-  
-  .top-nav {
-    flex: 1;
-    justify-content: space-around;
-  }
-
-  .hero-title {
-    font-size: 3rem;
+    flex-direction: row; /* Side-by-side on desktop */
   }
 
   .featured-cards {
-    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-columns: 1fr 1fr; /* Two columns on desktop */
   }
 
   .feature-offset {
-    left: 18px;
-    top: 18px;
-    background: #e6e6e6;
+    background: #e6e6e6; /* Solid gray offset only on desktop */
   }
-}
-
-/* Large Desktop */
-@media (min-width: 1024px) {
-  .featured-cards {
-    gap: 60px;
-  }
-}
-
-/* Footer */
-.site-footer {
-  padding: 30px 0;
-  text-align: center;
-  font-size: 0.9rem;
 }
