@@ -32,7 +32,10 @@ body {
 }
 
 /* 3. THE FIX: Navigation (No more overlapping) */
-.site-header { padding: 20px 0; }
+.site-header {
+  padding: 20px 0;
+  position: relative;
+}
 
 .header-inner {
   display: flex;
@@ -62,7 +65,8 @@ body {
   text-decoration: none;
   color: #08314b;
   font-weight: 600;
-  padding: 12px; /* Bigger tap area for thumbs */
+  padding: 14px 18px;
+  display: block;
 }
 
 /* 4. THE FIX: Hero Sizing */
@@ -113,12 +117,72 @@ body {
   .header-inner {
     flex-direction: row; /* Side-by-side on desktop */
   }
-
+.tips-grid {
+  grid-template-columns: 1fr 1fr;
+}
   .featured-cards {
     grid-template-columns: 1fr 1fr; /* Two columns on desktop */
   }
 
   .feature-offset {
     background: #e6e6e6; /* Solid gray offset only on desktop */
+  }
+}
+.menu-toggle {
+  display: none;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.tip-text {
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+
+  /* Show hamburger menu */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide nav by default */
+  .top-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--nav-bg);
+  outline: 3px solid var(--nav-outline);
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+  .top-nav.show {
+    display: flex;
+  }
+
+  .top-nav a {
+    padding: 15px;
+    border-top: 1px solid #444;
+  }
+
+  /* Stack tips vertically */
+  .tips-grid {
+    flex-direction: column;
+  }
+
+  /* Improve readability */
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .tip-text {
+    font-size: 15px;
   }
 }
