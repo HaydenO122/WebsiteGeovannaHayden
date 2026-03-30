@@ -186,3 +186,60 @@ body {
     font-size: 15px;
   }
 }
+/* ===== CLEAN CARD LAYOUT ===== */
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.tip {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Image container */
+.tip-box {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* FIX IMAGE SIZE */
+.tip-box img {
+  width: 100%;
+  max-height: 250px;   /* controls size */
+  object-fit: cover;   /* keeps it looking nice */
+  border-radius: 6px;
+}
+
+/* Text spacing */
+.tip h4 {
+  margin: 10px 0;
+}
+
+.tip-text {
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+/* ===== DESKTOP LAYOUT ===== */
+@media (min-width: 768px) {
+  .tips-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .tip {
+    max-width: 100%;
+  }
+
+  .tip-box img {
+    max-height: 300px;
+  }
+}
