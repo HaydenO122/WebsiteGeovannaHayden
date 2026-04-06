@@ -1,307 +1,109 @@
-:root {
-  --nav-bg: #c9f2f8;
-  --nav-outline: #05a6ff;
-  --page-bg: #8f8f8f;
-}
-
-/* 1. THE FIX: Box-sizing & Image Reset */
-* { 
-  box-sizing: border-box; /* Prevents padding from adding to width */
-  margin: 0; 
-  padding: 0; 
-}
-
-img {
-  max-width: 100%; /* Image stays inside its container */
-  height: auto;    /* Keeps the shape correct */
-  display: block;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: var(--page-bg);
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.4;
-  overflow-x: hidden; /* Hard stop for horizontal scrolling */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #faf9f6; /* Soft cream background */
+    color: #333;
+    line-height: 1.6;
 }
 
-/* 2. THE FIX: Flexible Container */
 .container {
-  width: 95%;
-  max-width: 1100px;
-  margin: 0 auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* 3. THE FIX: Navigation (No more overlapping) */
+/* Header & Nav */
 .site-header {
-  padding: 20px 0;
-  position: relative;
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
 }
 
 .header-inner {
-  display: flex;
-  flex-direction: column; /* Stacked on mobile */
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo-wrap {
-  width: 80px;
-  height: 80px;
-  flex-shrink: 0; /* Prevents logo from squishing */
-}
-
-.top-nav {
-  display: flex;
-  flex-wrap: wrap; /* Allows links to jump to next line if screen is tiny */
-  justify-content: center;
-  background: var(--nav-bg);
-  outline: 3px solid var(--nav-outline);
-  border-radius: 4px;
-  width: 100%;
-  padding: 10px;
+.logo-img {
+    height: 60px;
+    border-radius: 50%;
 }
 
 .top-nav a {
-  text-decoration: none;
-  color: #08314b;
-  font-weight: 600;
-  padding: 14px 18px;
-  display: block;
+    text-decoration: none;
+    color: #555;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
-/* 4. THE FIX: Hero Sizing */
+.top-nav a:hover {
+    color: #d4a373; /* Warm accent color */
+}
+
+/* Hero Section */
 .hero {
-  text-align: center;
-  padding: 40px 0;
+    text-align: center;
+    padding: 60px 0;
 }
 
 .hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 5vw, 3rem); /* Fluid font: grows with screen */
-  margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #2c3e50;
 }
 
-/* 5. THE FIX: Grid Layout (Replaces floats/flex-wrap) */
-.featured-cards {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column on mobile */
-  gap: 50px;
-  margin-bottom: 100px;
+/* THE IMAGE FIX: Card Grid */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding-bottom: 80px;
 }
 
-/* Card Sizing Fix */
-.feature {
-  width: 100%;
+.card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden; /* Keeps images from leaking out */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    position: relative;
+    text-align: center;
 }
 
-.feature-image-wrap {
-  position: relative;
-  width: 100%;
-  background: white;
-  padding: 10px;
-  /* Removed fixed height here - let the image define it */
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.feature-offset {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.2);
-  top: 15px;
-  left: 15px;
-  z-index: -1; /* Puts it behind the image */
-}
-
-/* 6. DESKTOP ADAPTATION */
-@media (min-width: 768px) {
-  .header-inner {
-    flex-direction: row; /* Side-by-side on desktop */
-  }
-.tips-grid {
-  grid-template-columns: 1fr 1fr;
-}
-  .featured-cards {
-    grid-template-columns: 1fr 1fr; /* Two columns on desktop */
-  }
-
-  .feature-offset {
-    background: #e6e6e6; /* Solid gray offset only on desktop */
-  }
-}
-.menu-toggle {
-  display: none;
-}
-
-.tips-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-  margin-top: 30px;
-}
-
-.tip-text {
-  line-height: 1.6;
-}
-@media (max-width: 768px) {
-
-  /* Show hamburger menu */
-  .menu-toggle {
+/* Making images behave */
+.card img {
+    width: 100%;
+    height: 250px;     /* Set a fixed height */
+    object-fit: cover; /* This crops the image to fit without stretching */
     display: block;
-  }
-
-  /* Hide nav by default */
-  .top-nav {
-  display: none;
-  flex-direction: column;
-  background: var(--nav-bg);
-  outline: 3px solid var(--nav-outline);
-  width: 100%;
-  position: absolute;
-  top: 100px;
-  left: 0;
-  text-align: center;
-  z-index: 1000;
 }
 
-  .top-nav.show {
-    display: flex;
-  }
-
-  .top-nav a {
-    padding: 15px;
-    border-top: 1px solid #444;
-  }
-
-  /* Stack tips vertically */
-  .tips-grid {
-    flex-direction: column;
-  }
-
-  /* Improve readability */
-  .hero-title {
-    font-size: 26px;
-  }
-
-  .tip-text {
-    font-size: 15px;
-  }
-}
-/* ===== CLEAN CARD LAYOUT ===== */
-
-.tips-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 50px;
-  margin-top: 40px;
+figcaption {
+    padding: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: #fff;
+    color: #444;
 }
 
-.tip {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Image container */
-.tip-box {
-  background: white;
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-/* FIX IMAGE SIZE */
-.tip-box img {
-  width: 100%;
-  max-height: 250px;   /* controls size */
-  object-fit: cover;   /* keeps it looking nice */
-  border-radius: 6px;
-}
-
-/* Text spacing */
-.tip h4 {
-  margin: 10px 0;
-}
-
-.tip-text {
-  font-size: 16px;
-  line-height: 1.6;
-  padding: 0 10px;
-}
-
-/* ===== DESKTOP LAYOUT ===== */
-@media (min-width: 768px) {
-  .tips-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-  }
-
-  .tip {
-    max-width: 100%;
-  }
-
-  .tip-box img {
-    max-height: 300px;
-  }
-}
-/* ===== HOME PAGE MATCH TIPS STYLE ===== */
-
-.featured-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 50px;
-  margin-top: 40px;
-}
-
-.feature {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Match tip card style */
-.feature-image-wrap {
-  background: white;
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-/* FIX IMAGE SIZE (same as tips page) */
-.feature-image-wrap img {
-  width: 100%;
-  max-height: 250px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-/* Text spacing */
-.feature h4 {
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-/* CTA styling (optional polish) */
-.featured-cta {
-  margin-top: 20px;
-  font-weight: 600;
-  background: white;
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 6px;
-}
-
-/* ===== DESKTOP MATCH ===== */
-@media (min-width: 768px) {
-  .featured-cards {
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-  }
-
-  .feature {
-    max-width: 100%;
-  }
-
-  .feature-image-wrap img {
-    max-height: 300px;
-  }
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 40px 0;
+    background: #2c3e50;
+    color: #fff;
+    font-size: 0.9rem;
 }
