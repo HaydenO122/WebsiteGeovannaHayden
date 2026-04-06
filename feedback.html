@@ -3,20 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact / Feedback — The Cozy Spoon</title>
-
+  <title>Contact — The Cozy Spoon</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner container">
-      <div class="logo-wrap">
-        <!-- PICTURE 1: Logo (circular spoon logo) -->
-        <img src="images/logo.png" alt="The Cozy Spoon logo" class="logo-img" style="border: 4px solid rgba(255,255,255,0.6);">
-      </div>
 
-      <nav class="top-nav" aria-label="Main navigation">
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <img src="logo.png" alt="Logo" class="mini-logo">
+      <nav class="blue-nav">
         <a href="index.html">Home</a>
         <a href="recipes.html">Recipes</a>
         <a href="tips.html">Tips</a>
@@ -27,37 +22,21 @@
   </header>
 
   <main class="container">
-    <section class="feedback-hero">
-      <h2 class="hero-title">If you tried any of our recipes, or have feedback, please leave a review!</h2>
-
-      <form class="feedback-form" action="#" method="post" onsubmit="alert('Form submitted (demo)'); return false;">
-        <label>
-          <span class="form-label">Name:</span>
-          <input type="text" name="name" class="form-input" required>
-        </label>
-
-        <label>
-          <span class="form-label">Email:</span>
-          <input type="email" name="email" class="form-input" required>
-        </label>
-
-        <label>
-          <span class="form-label">Review/feedback:</span>
-          <textarea name="feedback" class="form-textarea" rows="4" required></textarea>
-        </label>
-
-        <div style="text-align:center; margin-top:16px;">
-          <button type="submit" class="btn-primary">Submit Review</button>
-        </div>
-      </form>
+    <section class="hero-section">
+      <h1 class="hero-main-title">Get in Touch.</h1>
+      <div class="image-box" style="max-width: 600px; margin: 0 auto; text-align: left; padding: 30px;">
+          <form style="display: flex; flex-direction: column; gap: 15px;">
+              <label>Name</label>
+              <input type="text" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+              <label>Email</label>
+              <input type="email" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+              <label>Message</label>
+              <textarea style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; height: 100px;"></textarea>
+              <button class="featured-btn" type="submit">Send Message</button>
+          </form>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">© <span id="year-feedback"></span> The Cozy Spoon</div>
-  </footer>
-
-  <script> document.getElementById('year-feedback').textContent = new Date().getFullYear(); </script>
 </body>
-
 </html>
