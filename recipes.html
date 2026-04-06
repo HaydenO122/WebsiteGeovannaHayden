@@ -5,72 +5,53 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Recipes — The Cozy Spoon</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header class="site-header">
-    <div class="container header-flex">
-      <div class="logo-container">
-        <img src="logo.png" alt="The Cozy Spoon" class="logo-img">
-      </div>
-      <nav class="main-nav">
+    <div class="container nav-wrapper">
+      <img src="logo.png" alt="Logo" class="mini-logo">
+      <nav class="blue-nav">
         <a href="index.html">Home</a>
-        <a href="recipes.html" class="active">Recipes</a>
+        <a href="recipes.html">Recipes</a>
         <a href="tips.html">Tips</a>
         <a href="about.html">About</a>
-        <a href="feedback.html">Contact</a>
+        <a href="contact.html">Contact Us</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <section class="page-intro">
-      <h1 class="display-title">Which meal are we preparing today?</h1>
-      <div class="accent-line"></div>
+    <section class="hero-section">
+      <h1 class="hero-main-title">Flavor starts here.</h1>
+      <p class="hero-subtext">Welcome to your new favorite place in the kitchen. Here you'll find simple recipes, helpful tips, and delicious inspiration.</p>
+      <button class="featured-btn">Featured Recipes</button>
     </section>
 
     <div class="recipe-grid">
-      <a href="#" class="recipe-card">
-        <div class="card-image">
-          <img src="breakfast.jpg" alt="Breakfast Options">
-          <div class="card-overlay"><span>View Recipes</span></div>
+      <div class="recipe-item">
+        <h3>Breakfast</h3>
+        <div class="image-box">
+          <img src="breakfast.jpg" alt="Breakfast">
         </div>
-        <div class="card-text">
-          <h3>Breakfast</h3>
-        </div>
-      </a>
+      </div>
 
-      <a href="#" class="recipe-card">
-        <div class="card-image">
-          <img src="lunch.jpg" alt="Lunch Options">
-          <div class="card-overlay"><span>View Recipes</span></div>
+      <div class="recipe-item">
+        <h3>Lunch</h3>
+        <div class="image-box">
+          <img src="lunch.jpg" alt="Lunch">
         </div>
-        <div class="card-text">
-          <h3>Lunch</h3>
-        </div>
-      </a>
+      </div>
 
-      <a href="#" class="recipe-card">
-        <div class="card-image">
-          <img src="dinner.jpg" alt="Dinner Options">
-          <div class="card-overlay"><span>View Recipes</span></div>
+      <div class="recipe-item">
+        <h3>Dinner</h3>
+        <div class="image-box">
+          <img src="dinner.jpg" alt="Dinner">
         </div>
-        <div class="card-text">
-          <h3>Dinner</h3>
-        </div>
-      </a>
+      </div>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> The Cozy Spoon. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
