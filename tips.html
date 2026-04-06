@@ -4,22 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tips — The Cozy Spoon</title>
-
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+
   <header class="site-header">
-    <div class="header-inner container">
-      <div class="logo-wrap">
-        <img src="logo.png" alt="The Cozy Spoon logo" class="logo-img">
-      </div>
-
-      <!-- Mobile menu button -->
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-      <nav class="top-nav" id="nav" aria-label="Main navigation">
+    <div class="container nav-wrapper">
+      <img src="logo.png" alt="Logo" class="mini-logo">
+      <nav class="blue-nav">
         <a href="index.html">Home</a>
         <a href="recipes.html">Recipes</a>
         <a href="tips.html">Tips</a>
@@ -30,39 +23,26 @@
   </header>
 
   <main class="container">
-    <section class="hero">
-      <h2 class="hero-title">Level up your kitchen game.</h2>
+    <section class="hero-section">
+      <h1 class="hero-main-title">Kitchen Secrets.</h1>
+      <p class="hero-subtext">Master the basics with our favorite culinary hacks and techniques.</p>
     </section>
 
-    <section class="tips-grid">
-      <article class="tip">
-        <div class="tip-box">
-          <img src="measure-flour.jpg" alt="How to measure flour">
+    <div class="recipe-grid">
+      <div class="recipe-item">
+        <h3>Knife Skills 101</h3>
+        <div class="image-box">
+          <img src="knife.jpg" alt="Chopping vegetables">
         </div>
-        <h4>How to Measure Flour the Right Way</h4>
-        <p class="tip-text">Baking is precision. Learn the measuring technique that keeps your baked goods light and not dense.</p>
-      </article>
-
-      <article class="tip">
-        <div class="tip-box">
-          <img src="cook-chicken.jpg" alt="How to cook chicken to perfection">
+      </div>
+      <div class="recipe-item">
+        <h3>Seasoning Tips</h3>
+        <div class="image-box">
+          <img src="spices.jpg" alt="Assorted spices">
         </div>
-        <h4>How to Cook Chicken to Perfection</h4>
-        <p class="tip-text">Pat chicken dry, season, cook to 165°F, and let it rest — a few small steps for juicy results.</p>
-      </article>
-    </section>
+      </div>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">© <span id="year-tips"></span> The Cozy Spoon</div>
-  </footer>
-
-  <script>
-    document.getElementById('year-tips').textContent = new Date().getFullYear();
-
-    function toggleMenu() {
-      document.getElementById("nav").classList.toggle("show");
-    }
-  </script>
 </body>
 </html>
