@@ -4,59 +4,73 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Recipes — The Cozy Spoon</title>
-
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner container">
-      <div class="logo-wrap">
-        <img src="logo.png" alt="The Cozy Spoon logo" class="logo-img" style="border: 4px solid rgba(255,255,255,0.6);">
-      </div>
 
-      <nav class="top-nav">
+  <header class="site-header">
+    <div class="container header-flex">
+      <div class="logo-container">
+        <img src="logo.png" alt="The Cozy Spoon" class="logo-img">
+      </div>
+      <nav class="main-nav">
         <a href="index.html">Home</a>
-        <a href="recipes.html">Recipes</a>
+        <a href="recipes.html" class="active">Recipes</a>
         <a href="tips.html">Tips</a>
         <a href="about.html">About</a>
-        <a href="feedback.html">Contact Us</a>
+        <a href="feedback.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <section class="hero">
-      <h2 class="hero-title">Which meal are we preparing today?</h2>
+    <section class="page-intro">
+      <h1 class="display-title">Which meal are we preparing today?</h1>
+      <div class="accent-line"></div>
     </section>
 
-    <section class="cards">
-      <figure class="card">
-        <div class="card-offset"></div>
-        <img src="breakfast.jpg" alt="Breakfast plate">
-        <figcaption>Breakfast</figcaption>
-      </figure>
+    <div class="recipe-grid">
+      <a href="#" class="recipe-card">
+        <div class="card-image">
+          <img src="breakfast.jpg" alt="Breakfast Options">
+          <div class="card-overlay"><span>View Recipes</span></div>
+        </div>
+        <div class="card-text">
+          <h3>Breakfast</h3>
+        </div>
+      </a>
 
-      <figure class="card card-center">
-        <div class="card-offset"></div>
-        <img src="lunch.jpg" alt="Lunch plate">
-        <figcaption>Lunch</figcaption>
-      </figure>
+      <a href="#" class="recipe-card">
+        <div class="card-image">
+          <img src="lunch.jpg" alt="Lunch Options">
+          <div class="card-overlay"><span>View Recipes</span></div>
+        </div>
+        <div class="card-text">
+          <h3>Lunch</h3>
+        </div>
+      </a>
 
-      <figure class="card">
-        <div class="card-offset"></div>
-        <img src="dinner.jpg" alt="Dinner plate">
-        <figcaption>Dinner</figcaption>
-      </figure>
-    </section>
+      <a href="#" class="recipe-card">
+        <div class="card-image">
+          <img src="dinner.jpg" alt="Dinner Options">
+          <div class="card-overlay"><span>View Recipes</span></div>
+        </div>
+        <div class="card-text">
+          <h3>Dinner</h3>
+        </div>
+      </a>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container">© <span id="year-recipes"></span> The Cozy Spoon</div>
+    <div class="container">
+      <p>&copy; <span id="year"></span> The Cozy Spoon. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
-    document.getElementById('year-recipes').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
