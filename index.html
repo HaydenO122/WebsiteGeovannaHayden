@@ -4,9 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Home — The Cozy Spoon</title>
-  
   <link rel="stylesheet" href="styles.css">
-  
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,7 +12,6 @@
   <header class="site-header">
     <div class="container nav-wrapper">
       <img src="logo.png" alt="Logo" class="mini-logo">
-      
       <nav class="blue-nav">
         <a href="index.html">Home</a>
         <a href="recipes.html">Recipes</a>
@@ -32,22 +29,19 @@
       <a href="recipes.html" style="text-decoration:none;"><button class="featured-btn">Featured Recipes</button></a>
     </section>
 
-    <div class="recipe-grid">
-      <div class="recipe-item">
-        <h3>Today's Feature</h3>
+    <div class="recipe-grid" style="justify-content: center; display: flex;">
+      <div class="recipe-item" style="max-width: 600px; width: 100%;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Today's Feature: Avocado Toast</h3>
         <div class="image-box">
-          <img src="breakfast.jpg" alt="Featured Meal">
+          <img src="breakfast.jpg" alt="Breakfast Feature" style="height: 450px; width: 100%; object-fit: cover;">
         </div>
       </div>
     </div>
   </main>
 
-  <footer style="text-align:center; padding: 40px; color: white;">
-    © <span id="year"></span> The Cozy Spoon
+  <footer style="text-align:center; padding: 60px 0; color: white;">
+    © 2026 The Cozy Spoon
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
