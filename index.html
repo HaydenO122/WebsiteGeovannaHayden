@@ -2,24 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Cozy Spoon — Home</title>
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home — The Cozy Spoon</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+
   <header class="site-header">
-    <div class="header-inner container">
-      <div class="logo-wrap">
-        <img src="logo.png" alt="The Cozy Spoon logo" class="logo-img">
-      </div>
-
-      <!-- Mobile menu button -->
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-      <nav class="top-nav" id="nav">
+    <div class="container nav-wrapper">
+      <img src="logo.png" alt="Logo" class="mini-logo">
+      <nav class="blue-nav">
         <a href="index.html">Home</a>
         <a href="recipes.html">Recipes</a>
         <a href="tips.html">Tips</a>
@@ -30,45 +23,21 @@
   </header>
 
   <main class="container">
-    <section class="hero">
-      <h2 class="hero-title">Flavor starts here.</h2>
-      <p class="lead">
-        Welcome to your new favorite place in the kitchen. Here you'll find simple recipes,
-        helpful tips, and delicious inspiration.
-      </p>
+    <section class="hero-section">
+      <h1 class="hero-main-title">Flavor starts here.</h1>
+      <p class="hero-subtext">Welcome to your new favorite place in the kitchen. Here you'll find simple recipes, helpful tips, and delicious inspiration.</p>
+      <a href="recipes.html" class="featured-btn" style="text-decoration:none; display:inline-block; color:black;">Explore Recipes</a>
+    </section>
 
-      <div class="featured-cta">
-        Featured Recipes
+    <div class="recipe-grid">
+      <div class="recipe-item">
+        <h3>Featured: Burger Garlic Sauce</h3>
+        <div class="image-box">
+          <img src="burger.jpg" alt="Our Signature Burger">
+        </div>
       </div>
-    </section>
-
-    <section class="featured-cards">
-      <article class="feature">
-        <h4>Chicken Stir Fry</h4>
-        <div class="feature-image-wrap">
-          <img src="chicken-stirfry.png" alt="Chicken stir fry">
-        </div>
-      </article>
-
-      <article class="feature">
-        <h4>The Best Fish Tacos</h4>
-        <div class="feature-image-wrap">
-          <img src="fish-tacos.png" alt="Fish tacos">
-        </div>
-      </article>
-    </section>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">© <span id="year"></span> The Cozy Spoon</div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    function toggleMenu() {
-      document.getElementById("nav").classList.toggle("show");
-    }
-  </script>
 </body>
 </html>
