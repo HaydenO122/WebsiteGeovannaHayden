@@ -25,18 +25,51 @@
     <section class="hero-section">
       <h1 class="hero-main-title">Get in Touch.</h1>
       <div class="image-box" style="max-width: 600px; margin: 0 auto; text-align: left; padding: 30px;">
-          <form style="display: flex; flex-direction: column; gap: 15px;">
+          <form id="contactForm" style="display: flex; flex-direction: column; gap: 15px;">
               <label>Name</label>
-              <input type="text" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+              <input type="text" id="name" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+              
               <label>Email</label>
-              <input type="email" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+              <input type="email" id="email" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+              
               <label>Message</label>
-              <textarea style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; height: 100px;"></textarea>
+              <textarea id="message" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; height: 100px;"></textarea>
+              
               <button class="featured-btn" type="submit">Send Message</button>
           </form>
       </div>
     </section>
   </main>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      // Prevent form from submitting normally
+      event.preventDefault();
+
+      // Get input values
+      const nameValue = document.getElementById('name').value;
+      const emailValue = document.getElementById('email').value;
+      const messageValue = document.getElementById('message').value;
+
+      // Validate: check if any fields are empty
+      if (nameValue === "" || emailValue === "" || messageValue === "") {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      // Validate: check if email contains @ symbol
+      if (!emailValue.includes("@")) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      // If valid, show success alert
+      alert("Success! Thank you, " + nameValue + ". Your message has been sent.");
+      
+      // Clear the form
+      this.reset();
+    });
+  </script>
 
 </body>
 </html>
