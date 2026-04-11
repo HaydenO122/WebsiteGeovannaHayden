@@ -40,17 +40,20 @@
   </main>
 
   <footer style="text-align:center; padding: 60px 0; color: white;">
-    © 2026 The Cozy Spoon
-  </footer>
-<p id="quote">Click for a quote!</p>
-<button onclick="newQuote()">New Quote</button>
+   <div style="text-align: center; margin-top: 30px;">
+    <p id="quote">Click for a quote!</p>
+    <button onclick="newQuote()">New Quote</button>
+</div>
 
-<script>
+<p style="text-align: center;">© 2026 The Cozy Spoon</p>
+  </footer>
+  <script>
 let quotes = [
-    "Stay focused.",
-    "You got this!",
-    "Keep going.",
-    "Success takes time."
+    "Success takes time.",
+    "Stay consistent.",
+    "Good food, good mood.",
+    "Small steps every day.",
+    "You got this!"
 ];
 
 function newQuote() {
@@ -58,5 +61,9 @@ function newQuote() {
     document.getElementById("quote").innerText = quotes[random];
 }
 </script>
+  <p id="quote" style="font-style: italic; color: #555;"></p>
+<button onclick="newQuote()" style="padding: 8px 12px; border-radius: 6px;">
+    New Quote
+</button>
 </body>
 </html>
