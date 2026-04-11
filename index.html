@@ -42,6 +42,21 @@
   <footer style="text-align:center; padding: 60px 0; color: white;">
     © 2026 The Cozy Spoon
   </footer>
+<p id="quote">Click for a quote!</p>
+<button onclick="newQuote()">New Quote</button>
 
+<script>
+let quotes = [
+    "Stay focused.",
+    "You got this!",
+    "Keep going.",
+    "Success takes time."
+];
+
+function newQuote() {
+    let random = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").innerText = quotes[random];
+}
+</script>
 </body>
 </html>
