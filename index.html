@@ -39,15 +39,15 @@
     </div>
   </main>
 
-  <footer style="text-align:center; padding: 60px 0; color: white;">
-   <div style="text-align: center; margin-top: 30px;">
-    <p id="quote">Click for a quote!</p>
-    <button onclick="newQuote()">New Quote</button>
-</div>
+<footer style="text-align:center; padding: 60px 0; color: white;">
+  <div style="text-align: center; margin-top: 30px;">
+    <p id="quote" style="font-style: italic; color: #ddd;"></p>
+  </div>
 
-<p style="text-align: center;">© 2026 The Cozy Spoon</p>
-  </footer>
-  <script>
+  <p style="text-align: center;">© 2026 The Cozy Spoon</p>
+</footer>
+
+<script>
 let quotes = [
     "Success takes time.",
     "Stay consistent.",
@@ -60,10 +60,13 @@ function newQuote() {
     let random = Math.floor(Math.random() * quotes.length);
     document.getElementById("quote").innerText = quotes[random];
 }
+
+// show one immediately
+newQuote();
+
+// change every 4 seconds
+setInterval(newQuote, 4000);
 </script>
-  <p id="quote" style="font-style: italic; color: #555;"></p>
-<button onclick="newQuote()" style="padding: 8px 12px; border-radius: 6px;">
-    New Quote
-</button>
+ 
 </body>
 </html>
