@@ -69,3 +69,12 @@
 .featured-btn:hover {
     transform: scale(1.05); /* Makes the button 5% bigger */
 }
+/* Fail-safe pop effect */
+.blue-nav a, .featured-btn {
+    display: inline-block !important;
+    transition: transform 0.3s ease !important;
+}
+
+.blue-nav a:hover, .featured-btn:hover {
+    transform: scale(1.15) !important;
+}
